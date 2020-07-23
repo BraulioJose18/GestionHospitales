@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".About">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="244dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/acercade" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-light"
+        android:text="¿Quiénes Somos?"
+        android:textColor="#00457d"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <TextView
+        android:id="@+id/viewSomos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Somos una red de hospitales dispuestos a brindarte la mejor atención a ti y a tu familia"
+        android:padding="8dp"
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:fontFamily="sans-serif-light"
+        android:text="¿Qué te ofrecemos?"
+        android:textColor="#00457d"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewSomos" />
+
+    <TextView
+        android:id="@+id/viewInfo"
+        android:layout_width="199dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="sans-serif-light"
+        android:padding="8dp"
+        android:text="Información al alcance de tu mano."
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/viewCitas"
+        android:layout_width="199dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="sans-serif-light"
+        android:padding="8dp"
+        android:text="Solicita una citas las 24 hrs del día."
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewInfo" />
+
+    <TextView
+        android:id="@+id/viewHistoria"
+        android:layout_width="199dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="sans-serif-light"
+        android:padding="8dp"
+        android:text="Accede a toda tu actividad médica con un click."
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewCitas" />
+
+    <TextView
+        android:id="@+id/viewStaffDoc"
+        android:layout_width="199dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="sans-serif-light"
+        android:padding="8dp"
+        android:text="Accede a información acerca de nuestro staff médico."
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewHistoria" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="43dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/viewInfo"
+        app:layout_constraintTop_toTopOf="@+id/viewInfo"
+        app:srcCompat="@drawable/phone" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/viewCitas"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:srcCompat="@drawable/clock" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toEndOf="@+id/viewHistoria"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/history_med" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toEndOf="@+id/viewStaffDoc"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:srcCompat="@drawable/staff" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

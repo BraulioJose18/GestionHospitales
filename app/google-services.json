@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "407452776610",
+    "firebase_url": "https://gestionhospitales-e1948.firebaseio.com",
+    "project_id": "gestionhospitales-e1948",
+    "storage_bucket": "gestionhospitales-e1948.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407452776610:android:de1a63117dbe9d76283ffb",
+        "android_client_info": {
+          "package_name": "com.example.gestionhospitales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407452776610-41jbeqjolc70s2ao6int1hmi4jehce1r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gestionhospitales",
+            "certificate_hash": "3e8b5eda9c112db4cae8563b6dfe5699e397de94"
+          }
+        },
+        {
+          "client_id": "407452776610-c54qp401o13hjtqm8kb2s3avpgvnj9br.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZQCI3DZsxLxjG1PwRg0GAB_60NsH-RTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407452776610-c54qp401o13hjtqm8kb2s3avpgvnj9br.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
