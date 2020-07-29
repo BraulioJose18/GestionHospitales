@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.example.gestionhospitales.adapter.AdapterEspeCita;
 import com.example.gestionhospitales.adapter.AdapterEspecialidad;
 import com.example.gestionhospitales.pojo.Especialidad;
 import com.google.firebase.database.DataSnapshot;
@@ -16,30 +18,30 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EspecialidadListado extends AppCompatActivity {
+public class ReservarCita extends AppCompatActivity {
 
     List<Especialidad> especialidadList;
 
-    RecyclerView rvEspe;
+    RecyclerView rvEspeCita;
 
-    AdapterEspecialidad adapterEsp;
+    AdapterEspeCita adapterEspCita;
 
     LinearLayoutManager lmEsp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_especialidad_listado);
+        setContentView(R.layout.activity_reservar_cita);
 
-        rvEspe = findViewById(R.id.rvEspecialidad);
+        rvEspeCita = findViewById(R.id.rvEspecialidadCita);
         lmEsp = new LinearLayoutManager(this);
-        rvEspe.setLayoutManager(lmEsp);
+        rvEspeCita.setLayoutManager(lmEsp);
 
         especialidadList =  new ArrayList<>();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        adapterEsp = new AdapterEspecialidad(EspecialidadListado.this,especialidadList);
-        rvEspe.setAdapter(adapterEsp);
+        adapterEspCita = new AdapterEspeCita(ReservarCita.this,especialidadList);
+        rvEspeCita.setAdapter(adapterEspCita);
 
         database.getReference().child("Especialidades").addValueEventListener(new ValueEventListener() {
             @Override
@@ -48,9 +50,8 @@ public class EspecialidadListado extends AppCompatActivity {
                 for(DataSnapshot snap : snapshot.getChildren()){
                     Especialidad especialidades = snap.getValue(Especialidad.class);
                     especialidadList.add(especialidades);
-
                 }
-                adapterEsp.notifyDataSetChanged();
+                adapterEspCita.notifyDataSetChanged();
             }
 
             @Override

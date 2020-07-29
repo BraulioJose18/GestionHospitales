@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MenuHistorial"
     android:orientation="vertical">
 
     <TextView
@@ -15,6 +14,7 @@
         android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
         android:fontFamily="sans-serif-light"
         android:text="MENÚ HISTORIAL"
         android:textAlignment="center"
@@ -29,12 +29,11 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/historialCitas"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
+            app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -61,12 +60,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/historialRecetas"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
+            app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -93,12 +91,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/historialExamenes"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
+            app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout

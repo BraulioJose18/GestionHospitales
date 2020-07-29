@@ -48,7 +48,7 @@ public class MenuCardView extends AppCompatActivity {
         reservas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MenuCardView.this, Reservas.class));
+                startActivity(new Intent(MenuCardView.this, ReservarCita.class));
             }
         });
         acercade.setOnClickListener(new View.OnClickListener() {

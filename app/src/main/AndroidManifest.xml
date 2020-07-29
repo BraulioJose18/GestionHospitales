@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".EspecialidadListado"></activity>
+        <activity android:name=".HistorialRecetas"></activity>
+        <activity android:name=".HistorialExamen" />
+        <activity android:name=".HistorialCitas" />
+        <activity android:name=".ReservarCitaMedicos" />
+        <activity android:name=".ReservarCita" />
+        <activity android:name=".MedicosListado" />
+        <activity android:name=".EspecialidadListado" />
         <activity android:name=".MenuHistorial" />
         <activity android:name=".About" />
         <activity android:name=".Bienvenida">
@@ -22,7 +28,6 @@
         <activity android:name=".PerfilUsuario" />
         <activity android:name=".Calendario" />
         <activity android:name=".MenuCardView" />
-        <activity android:name=".Reservas" />
         <activity android:name=".StaffMedico" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />

@@ -27,6 +27,7 @@ public class StaffMedico extends AppCompatActivity {
 
     LinearLayoutManager lm;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +38,18 @@ public class StaffMedico extends AppCompatActivity {
         rvDoctor.setLayoutManager(lm);
 
         //searchView = findViewById(R.id.searchDoctor);
+        Bundle extraEsp = getIntent().getExtras();
+        String extra = "";
+        if(extraEsp != null){
+            extra = extraEsp.getString("nameEspe");
+        }
         listDoc =  new ArrayList<>();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         adapterDoc = new AdapterDoc(StaffMedico.this,listDoc);
         rvDoctor.setAdapter(adapterDoc);
 
-        database.getReference().child("Doctores").addValueEventListener(new ValueEventListener() {
+        database.getReference().child("Doctores").orderByChild("especialidad").equalTo(extra).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listDoc.clear();
