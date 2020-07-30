@@ -10,6 +10,12 @@ public class CitasHist {
 
     public CitasHist() {
     }
+    public CitasHist( String especialidad, String fecha, String hora, String medico) {
+        this.especialidad = especialidad;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.medico = medico;
+    }
 
     public CitasHist(String diagnostico, String especialidad, String fecha, String hora, String medico) {
         this.diagnostico = diagnostico;

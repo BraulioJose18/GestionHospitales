@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.gestionhospitales.adapter.AdapterMed;
 import com.example.gestionhospitales.adapter.AdapterMedCita;
@@ -29,26 +31,35 @@ public class ReservarCitaMedicos extends AppCompatActivity {
 
     LinearLayoutManager lmMedicosCita;
 
+    TextView titulo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservar_cita_medicos);
 
+        titulo = findViewById(R.id.tituloCitaMed);
+
         rvMedicosCita = findViewById(R.id.rvMedicoCita);
         lmMedicosCita = new LinearLayoutManager(this);
         rvMedicosCita.setLayoutManager(lmMedicosCita);
+
+        String dato = titulo.getText().toString(); //Obtienes el texto del EditText
+        Intent c1 = new Intent(ReservarCitaMedicos.this, ReservaCitaForm.class);
+        c1.putExtra("dato", dato);
 
         Bundle extraEsp = getIntent().getExtras();
         String extra = "";
         if(extraEsp != null){
             extra = extraEsp.getString("nameEspeCita");
         }
-
+        titulo.setText("Elija un médico - "+extra);
         listMed =  new ArrayList<>();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         adapterMedicos = new AdapterMedCita(ReservarCitaMedicos.this,listMed);
         rvMedicosCita.setAdapter(adapterMedicos);
+        adapterMedicos.enviarDatos(extra);
         database.getReference().child("EspecialidadMedico/"+extra).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

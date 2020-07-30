@@ -9,9 +9,9 @@
     android:background="@drawable/background">
 
     <TextView
-        android:id="@+id/texViewCitas"
+        android:id="@+id/tituloCitaMed"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="25dp"

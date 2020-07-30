@@ -57,7 +57,7 @@
                 android:textColor="#000" />
 
                 <Button
-                    android:id="@+id/medCita"
+                    android:id="@+id/medCitaReser"
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".HistorialRecetas"></activity>
+        <activity android:name=".ReservaCitaForm"></activity>
+        <activity android:name=".HistorialRecetas" />
         <activity android:name=".HistorialExamen" />
         <activity android:name=".HistorialCitas" />
         <activity android:name=".ReservarCitaMedicos" />
