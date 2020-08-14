@@ -74,11 +74,22 @@ public class AdapterMedCita extends RecyclerView.Adapter<AdapterMedCita.MedViewH
 
             //Apellido del Médico
             String apellMed = apellMedCita.getText().toString();
-            String apell = apellMed.substring(0,apellMed.indexOf(" "));
+            String apell = "";
+            if(apellMed.indexOf(" ")!=-1){
+                apell = apellMed.substring(0,apellMed.indexOf(" "));
+            }else{
+                apell = apellMed;
+            }
 
             //Nombre del Médico
             String nombMed = nombMedCita.getText().toString();
-            String nomb = nombMed.substring(0,nombMed.indexOf(" "));
+            String nomb ="";
+            if(nombMed.indexOf(" ")!=-1){
+                 nomb = nombMed.substring(0,nombMed.indexOf(" "));
+            }else{
+                nomb = nombMed;
+            }
+
 
             String nombCompMed = apell + " " + nomb;
             intent.putExtra("nameDoctor", nombCompMed);

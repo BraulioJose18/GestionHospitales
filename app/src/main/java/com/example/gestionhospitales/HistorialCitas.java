@@ -7,10 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.gestionhospitales.adapter.AdapterDoc;
 import com.example.gestionhospitales.adapter.AdapterHistorialCitas;
 import com.example.gestionhospitales.pojo.CitasHist;
-import com.example.gestionhospitales.pojo.Doctores;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

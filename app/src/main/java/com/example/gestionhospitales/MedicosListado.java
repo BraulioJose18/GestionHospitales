@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.gestionhospitales.adapter.AdapterMed;
-import com.example.gestionhospitales.pojo.Doctores;
 import com.example.gestionhospitales.pojo.Medicos;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
