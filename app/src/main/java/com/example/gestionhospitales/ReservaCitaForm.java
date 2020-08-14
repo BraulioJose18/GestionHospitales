@@ -1,15 +1,24 @@
 package com.example.gestionhospitales;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.graphics.Matrix;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.gestionhospitales.pojo.CitasHist;
 import com.google.firebase.auth.FirebaseAuth;
@@ -67,6 +76,26 @@ public class ReservaCitaForm extends AppCompatActivity implements View.OnClickLi
         verificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                showEmergencyDialog();
+            }
+        });
+    }
+
+    private void showEmergencyDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(ReservaCitaForm.this, R.style.AlertDialogTheme);
+        View view = LayoutInflater.from(ReservaCitaForm.this).inflate(
+                R.layout.ventana_emergente,(ConstraintLayout)findViewById(R.id.layoutDialogContainer)
+        );
+        builder.setView(view);
+        ((TextView) view.findViewById(R.id.textTitle)).setText(getResources().getString(R.string.confirm_title));
+        ((TextView) view.findViewById(R.id.textMessage)).setText(getResources().getString(R.string.text_confirm));
+        ((Button) view.findViewById(R.id.buttonNo)).setText(getResources().getString(R.string.cancel));
+        ((Button) view.findViewById(R.id.buttonYes)).setText(getResources().getString(R.string.confirm));
+        ((ImageView) view.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_info);
+        final AlertDialog alertDialog = builder.create();
+        view.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 String diag = "Esperando Cita";
                 FirebaseAuth auth =FirebaseAuth.getInstance();
                 String user = auth.getCurrentUser().getUid();
@@ -75,8 +104,24 @@ public class ReservaCitaForm extends AppCompatActivity implements View.OnClickLi
                 CitasHist citas = new CitasHist(diag,editEspeResCitForm.getText().toString(),editFechaCitForm.getText().toString(),
                         editHoraCitForm.getText().toString(),editMedResCitForm.getText().toString());
                 myRef.push().setValue(citas);
+                alertDialog.dismiss();
+                Toast.makeText(ReservaCitaForm.this,"Cita Reservada con éxito", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(ReservaCitaForm.this, MenuCardView.class));
             }
         });
+        view.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+                Toast.makeText(ReservaCitaForm.this,"Escoja su horario", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        if(alertDialog.getWindow() != null){
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        alertDialog.show();
     }
 
     @Override

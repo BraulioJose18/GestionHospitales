@@ -2,4 +2,8 @@
     <string name="app_name">GestionHospitales</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirm_title">Confirmar Cita</string>
+    <string name="text_confirm">Desea confirmar su cita para el horario establecido</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm">Confirmar</string>
 </resources>

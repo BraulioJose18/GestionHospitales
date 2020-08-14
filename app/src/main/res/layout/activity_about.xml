@@ -42,7 +42,7 @@
         android:text="Somos una red de hospitales dispuestos a brindarte la mejor atención a ti y a tu familia"
         android:padding="8dp"
         android:textColor="#000"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
         android:fontFamily="sans-serif-light"
         android:text="¿Qué te ofrecemos?"
         android:textColor="#00457d"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewSomos" />
@@ -70,7 +70,7 @@
         android:padding="8dp"
         android:text="Información al alcance de tu mano."
         android:textColor="#000"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />

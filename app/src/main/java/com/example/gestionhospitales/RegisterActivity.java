@@ -66,7 +66,6 @@ public class RegisterActivity extends AppCompatActivity {
         femenino = (RadioButton) findViewById(R.id.Femenino);
         registrar = (Button) findViewById(R.id.registrarRegistro);
 
-
         registrar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -95,7 +94,13 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-    private void registerUser(){
+    public boolean validar(){
+        boolean status = true;
+
+        return true;
+
+    }
+    protected void registerUser(){
         mAuth.createUserWithEmailAndPassword(correoS,passwordS).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -113,11 +118,8 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if(task2.isSuccessful()){
-                                System.out.println("Estoy aqui");
                                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                                 finish();
-                                System.out.println("Ahora aqui");
-
                             }
                             else{
                                 Toast.makeText(RegisterActivity.this, "No se pudieron crear los datos", Toast.LENGTH_SHORT).show();
